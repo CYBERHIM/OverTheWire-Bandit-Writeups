@@ -170,3 +170,35 @@ Use the `tr` (translate) command to shift the alphabet characters forward or bac
 
 **Screenshot:**
 ![Bandit Level 11 to 12](assets/bandit11-12.png)
+
+---
+
+## Level 12 → Level 13
+**Goal:** The password is hidden inside a file that has been repeatedly compressed and archived using various formats (gzip, bzip2, tar, etc.).
+
+**Commands Used:** `mkdir`, `cp`, `file`, `gunzip`, `bunzip2`, `tar`
+
+**Explanation:** 
+1. Copy `data.txt` to a temporary directory in `/tmp/` so you have write permissions (`cp data.txt /tmp/myfolder/`).
+2. Use the `file` command to check the exact compression type of the file.
+3. Rename the file with the appropriate extension (e.g., `.gz`, `.bz2`, `.tar`) and extract it using the correct tool (`gunzip`, `bunzip2`, or `tar -xf`).
+4. Repeat this inspection and extraction process recursively until you extract the final plain-text file containing the password.
+
+**Screenshot:**
+![Bandit Level 12 to 13](assets/bandit12-13.png)
+
+---
+
+## Level 13 → Level 14
+**Goal:** Connect to port 3020 on localhost using the private SSH key provided in the current level to retrieve the password for Level 14.
+
+**Commands Used:** `ssh`, `-i` flag
+
+**Explanation:** 
+1. Locate the private SSH key file given in the home directory (often named something like `sshkey.private`).
+2. Connect to the local server via SSH using that private key file and specifying port 3020:
+   `ssh -i sshkey.private bandit14@localhost -p 3020`
+3. Once logged in, read the password file for Level 14 (usually located in `/etc/bandit_pass/bandit14`).
+
+**Screenshot:**
+![Bandit Level 13 to 14](assets/bandit13-14.png)
