@@ -15,7 +15,7 @@ A complete step-by-step documentation and write-up of my solutions for the OverT
 3. Use `cat readme` to print the contents of the file, which contains the password for Level 1.
 
 **Screenshot:**
-![Bandit Level 0 to 1](Lelel-00/Bamdit0 image.png)
+![Bandit Level 0 to 1](Level-00/Bamdit0 image.png)
 
 ---
 
